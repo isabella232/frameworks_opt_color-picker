@@ -13,13 +13,13 @@ The source code is also available: https://github.com/enricocid/Color-picker-lib
 
 #Google Play Store
 
-<a href="https://play.google.com/store/apps/details?id=com.enrico.colorpicker.cpl">
+<a href="https://play.google.com/store/apps/details?id=com.enrico.sample">
   <img alt="Get it on Google Play"       src="https://raw.githubusercontent.com/enricocid/Storage-USB/master/art/gplay.png" />
 </a>
  
 #F-Droid
  
-<a href="https://f-droid.org/repository/browse/?fdid=com.enrico.colorpicker.cpl">
+<a href="https://f-droid.org/repository/browse/?fdid=com.enrico.sample">
   <img alt="Get it on F-Droid"       src="https://raw.githubusercontent.com/enricocid/Storage-USB/master/art/fdroid.png" />
 </a>
 ------
