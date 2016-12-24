@@ -147,8 +147,8 @@ If you're developing for Android 3.0 (API level 11) and higher, you should use a
 ``` java
 public static class YourPreferenceFragment extends PreferenceFragment {
     
-    //retrieve AppCompatActivitu
-    final AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();   
+    //retrieve AppCompatActivity
+    final AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();   
     
     //your preference
     Preference yourPreference;
