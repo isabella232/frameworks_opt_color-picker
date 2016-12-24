@@ -100,7 +100,7 @@ public class YourActivity implements colorDialog.ColorSelectedListener {
             // ...
 
             //Set the picker dialog's color
-            colorDialog.setPicerColor(YourActivity.this, 1, color);
+            colorDialog.setPickerColor(YourActivity.this, 1, color);
 
             break;
 
