@@ -207,7 +207,7 @@ colorDialog.getPickerColor(AppCompatActivity activity, int tag);
 ```
 
 ```java
-public static class SettingsFragment extends PreferenceFragment {
+public static class YourPreferenceFragment extends PreferenceFragment {
 
     //your preference
     static Preference yourPreference;
@@ -231,7 +231,7 @@ public static class SettingsFragment extends PreferenceFragment {
 We are going to access the preference in a static method. In Your Preference fragment let's define the preference:
 
 ```java
-public static class SettingsFragment extends PreferenceFragment {
+public static class YourPreferenceFragment extends PreferenceFragment {
 
     //your preference
     static Preference yourPreference;
