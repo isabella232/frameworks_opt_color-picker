@@ -59,7 +59,7 @@ If You wanna use multiple dialog in Your activity You can use progressive number
 ###The Activity showing the color picker dialog must implement ColorSelectedListener:
 
 ``` java
-public class MainActivity implements colorDialog.ColorSelectedListener {
+public class YourActivity implements colorDialog.ColorSelectedListener {
 
     // ...
 
@@ -71,7 +71,7 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
         // ...
 
         // Set the picker's dialog color
-        colorDialog.setPickerColor(AppCompatActivity activity, int tag, int color);
+        colorDialog.setPickerColor(YourActivity.this, int tag, int color);
     }
 }
 ```
@@ -79,7 +79,7 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
 ###If You have multiple dialogs you can take advantage of tags. For example, if we have created four dialogs (1,2,3,4):
 
 ``` java
-public class MainActivity implements colorDialog.ColorSelectedListener {
+public class YourActivity implements colorDialog.ColorSelectedListener {
 
     // ...
 
@@ -100,7 +100,7 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
             // ...
 
             //Set the picker dialog's color
-            colorDialog.setPickerColor(YourActivity.this, 1, color);
+            colorDialog.setPicerColor(YourActivity.this, 1, color);
 
             break;
 
@@ -146,9 +146,12 @@ If you're developing for Android 3.0 (API level 11) and higher, you should use a
 
 ``` java
 public static class YourPreferenceFragment extends PreferenceFragment {
-
+    
+    //retrieve AppCompatActivitu
+    final AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();   
+    
     //your preference
-    Preference yourPreference;
+    Preference yourPreference;
 
     // ...
 
@@ -168,7 +171,7 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 
             public boolean onPreferenceClick(Preference preference) {
 
-                colorDialog.showColorPicker(AppCompatActivity appCompatActivity, int tag);
+                colorDialog.showColorPicker(appCompatActivity, int tag);
 
                 return false;
             }
