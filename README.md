@@ -2,7 +2,7 @@
 
 [ ![cpl](https://api.bintray.com/packages/enricod/Enrico/Color-picker-library/images/download.svg) ](https://api.bintray.com/packages/enricod/Enrico/Color-picker-library/_latestVersion)
 
-![ScreenShot](https://raw.githubusercontent.com/enricocid/Simply-Solid/master/art/screens.png)
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/screens.png)
 ------
 
 ### Sample Project
