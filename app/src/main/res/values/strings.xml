@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sample</string>
+    <string name="settings">Preference example</string>
+    <string name="customPref">My preference</string>
+    <string name="customPref2">Another preference</string>
+    <string name="selection">Selected color is for dialog number&#160;</string>
+    <string name="is">&#160;is:&#160;</string>
+
+</resources>
