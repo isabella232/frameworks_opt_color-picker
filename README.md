@@ -7,15 +7,17 @@
 
 ### Sample Project
 
-You can download the latest sample APK from this repo here: https://github.com/enricocid/Color-picker-library/blob/master/sample/app-release.apk
+You can download the latest sample APK from this repo here: https://github.com/enricocid/Color-picker-library/blob/master/app/app-release.apk
 
-Google Play Store
+The source code is also available: https://github.com/enricocid/Color-picker-library/tree/master/app
+
+#Google Play Store
 
 <a href="https://play.google.com/store/apps/details?id=com.enrico.colorpicker.cpl">
   <img alt="Get it on Google Play"       src="https://raw.githubusercontent.com/enricocid/Storage-USB/master/art/gplay.png" />
 </a>
  
-F-Droid
+#F-Droid
  
 <a href="https://f-droid.org/repository/browse/?fdid=com.enrico.colorpicker.cpl">
   <img alt="Get it on F-Droid"       src="https://raw.githubusercontent.com/enricocid/Storage-USB/master/art/fdroid.png" />
