@@ -54,7 +54,7 @@ colorDialog.showColorPicker(AppCompatActivity activity, int tag);
 
 If You wanna use multiple dialog in Your activity You can use progressive numbers (1,2,3 ...).
 
-###The Activity you show the dialog in must implement ColorSelectedListener:
+###The Activity showing the color picker dialog must implement ColorSelectedListener:
 
 ``` java
 public class MainActivity implements colorDialog.ColorSelectedListener {
