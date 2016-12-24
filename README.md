@@ -7,7 +7,7 @@
 
 ### Sample Project
 
-You can download the latest sample APK from this repo here: https://github.com/enricocid/Color-picker-library/blob/master/sample/sample.apk
+You can download the latest sample APK from this repo here: https://github.com/enricocid/Color-picker-library/blob/master/sample/app-release.apk
 
 Google Play Store
 
@@ -65,14 +65,11 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
 
     public void onColorSelection(DialogFragment dialogFragment, int color) {
 
-
         // Do Your shiz on color selection
-        // ...
         // ...
 
         // Set the picker's dialog color
         colorDialog.setPickerColor(AppCompatActivity activity, int tag, int color);
-
     }
 }
 ```
@@ -97,15 +94,9 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
         case 1:
 
             // do your shiz with selected color from dialog 1
-
             // ...
-
-            // ...
-
-
 
             //Set the picker dialog's color
-
             colorDialog.setPickerColor(YourActivity.this, 1, color);
 
             break;
@@ -113,14 +104,9 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
         case 2:
 
             // do your shiz with selected color from dialog 2
-
             // ...
-
-            // ...
-
 
             //Set the picker dialog's color
-
             colorDialog.setPickerColor(YourActivity.this, 2, color);
 
             break;
@@ -128,14 +114,9 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
         case 3:
 
             // do your shiz with selected color from dialog 3
-
             // ...
-
-            // ...
-
 
             //Set the picker dialog's color
-
             colorDialog.setPickerColor(YourActivity.this, 3, color);
 
             break;
@@ -143,18 +124,12 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
         case 4:
 
             // do your shiz with selected color from dialog 4
-
             // ...
-
-            // ...
-
 
             //Set the picker dialog's color
-
             colorDialog.setPickerColor(YourActivity.this, 4, color);
 
             break;
-
         }
     }
 }
@@ -163,7 +138,6 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
 # Usage instructions for Preferences
 
 If you're developing for Android 3.0 (API level 11) and higher, you should use a PreferenceFragment to display your list of Preference objects as recommended by Google (https://developer.android.com/guide/topics/ui/settings.html#Fragment)
-
 
 ###To display a color picker DialogFragment on Preference click:
 
@@ -181,7 +155,6 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 
         super.onCreate(savedInstanceState);
 
-
         //get yourPreference
         yourPreference = findPreference("yourPreferenceKey");
 
@@ -195,13 +168,9 @@ public static class YourPreferenceFragment extends PreferenceFragment {
                 colorDialog.showColorPicker(AppCompatActivity appCompatActivity, int tag);
 
                 return false;
-
             }
-
         });
-
     }
-
 }
 ```
 
@@ -211,21 +180,16 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 public class YourPreferenceActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {
 
     // ...
-    // ...
 
     @Override
 
     public void onColorSelection(DialogFragment dialogFragment, int color) {
 
-
-        //Do Your shiz on color selection
-
-        // ...
+        // Do Your shiz on color selection
         // ...
 
         //Set the picker's dialog color
         colorDialog.setPickerColor(YourPreferenceActivity.this, 4, color);
-
     }
 }
 ```
@@ -250,10 +214,8 @@ public static class SettingsFragment extends PreferenceFragment {
 
         super.onCreate(savedInstanceState);
 
-
         //retrieve the color
         int color = colorDialog.getPickerColor(getActivity(), int tag);
-
     }
 }
 ```
@@ -278,7 +240,6 @@ public static class SettingsFragment extends PreferenceFragment {
 
         //Get yourPreference
         yourPreference = findPreference("yourPreferenceKey");
-
     }
 }
 ```
@@ -291,24 +252,19 @@ public class PreferenceActivity extends AppCompatActivity implements colorDialog
     import static com.yourPackage.YourPreferenceActivity.YourPreferenceFragment.yourPreference;
 
     // ...
-    // ...
 
     @Override
 
     public void onColorSelection(DialogFragment dialogFragment, int color) {
-        // ...
+    
         // ...
 
         //Set the picker dialog's color
-
         colorDialog.setPickerColor(YourPreferenceActivity.this, 4, color);
 
         //set custom preference summary
-
         colorDialog.setColorPreferenceSummary(yourPreference, color, YourPreferenceActivity.this, getResources());
-
     }
-
 }
 ```
 
@@ -351,6 +307,7 @@ In YourPreferenceFragment:
 public static class YourPreferenceFragment extends PreferenceFragment {
 
     // ...
+    
     //color picker preferences
     static Preference yourPreference;
 
@@ -366,7 +323,6 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 
         //set preferences colors
         colorDialog.setColorPreferenceSummary(yourPreference, color, getActivity(), getResources());
-
     }
 }
 ```
