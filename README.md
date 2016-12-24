@@ -89,6 +89,7 @@ public class MainActivity implements colorDialog.ColorSelectedListener {
 
         int tag;
 
+        // get tag number from fragment
         tag = Integer.valueOf(dialogFragment.getTag());
 
         switch (tag) {
