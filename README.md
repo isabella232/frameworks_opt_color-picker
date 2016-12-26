@@ -342,20 +342,24 @@ Color picker library contains two color utilities that You can use in Your app.
 
 Returns shifted down color by the selected fraction
 
-Example usage:
+Example usage for color #FF673AB7:
 
 ```java
 colorDialog.shiftColor(color, 0.9f);
 ```
 
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/shift.png)
+
 ###getComplementaryColor(int colorToInvert)
 
 Returns inverted color
 
-Example usage:
+Example usage for color #FF673AB7:
 
 ```java
 colorDialog.getComplementaryColor(color)
 ```
+
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/compl.png)
 
 
