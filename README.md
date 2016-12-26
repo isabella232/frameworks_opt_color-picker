@@ -1,7 +1,7 @@
 # Color picker library
 
 [ ![cpl](https://api.bintray.com/packages/enricod/Enrico/Color-picker-library/images/download.svg) ](https://bintray.com/enricod/Enrico/Color-picker-library/_latestVersion)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-cpl-green.svg?style=true)](https://android-arsenal.com/details/1/4949)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Color%20picker%20library-orange.svg?style=flat)](https://android-arsenal.com/details/1/4949)
 
 ![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/screens.png)
 ------
