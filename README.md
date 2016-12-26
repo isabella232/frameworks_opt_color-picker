@@ -67,7 +67,7 @@ If You wanna use multiple dialog in Your activity You can use progressive number
 ###The Activity showing the color picker dialog must implement ColorSelectedListener:
 
 ``` java
-public class YourActivity implements colorDialog.ColorSelectedListener {
+public class YourActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {
 
     // ...
 
@@ -87,7 +87,7 @@ public class YourActivity implements colorDialog.ColorSelectedListener {
 ###If You have multiple dialogs you can take advantage of tags. For example, if we have created four dialogs (1,2,3,4):
 
 ``` java
-public class YourActivity implements colorDialog.ColorSelectedListener {
+public class YourActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {
 
     // ...
 
