@@ -203,7 +203,7 @@ public class YourPreferenceActivity extends AppCompatActivity implements colorDi
         // ...
 
         //Set the picker's dialog color
-        colorDialog.setPickerColor(YourPreferenceActivity.this, 4, color);
+        colorDialog.setPickerColor(YourPreferenceActivity.this, int tag, color);
     }
 }
 ```
@@ -276,7 +276,7 @@ public class PreferenceActivity extends AppCompatActivity implements colorDialog
         // ...
 
         //Set the picker dialog's color
-        colorDialog.setPickerColor(YourPreferenceActivity.this, 4, color);
+        colorDialog.setPickerColor(YourPreferenceActivity.this, int tag, color);
 
         //set custom preference summary
         colorDialog.setColorPreferenceSummary(yourPreference, color, YourPreferenceActivity.this, getResources());
@@ -312,6 +312,8 @@ case 3:
 case ...
     // ...
     break;
+    
+case ...   
 }
 ```
 
