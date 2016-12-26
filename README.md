@@ -41,7 +41,7 @@ Add the following dependency to your projects build.gradle:
 ```gradle
 dependencies {
     // ... other dependencies here
-    compile 'com.github.enricocid:cpl:1.0.0'
+    compile 'com.github.enricocid:cpl:1.0.1'
 }
 ```
 
