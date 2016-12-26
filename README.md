@@ -1,12 +1,19 @@
 # Color picker library
 
+### Features
+
+- Live color preview;
+- Change color using A(alpha) R(red) G(green) B(blue) seekbars;
+- Change colors by editing HEX|RGB's A (alpha) R (red) G (green) B (blue) edit texts;
+- Built-in material palette;
+
 [ ![cpl](https://api.bintray.com/packages/enricod/Enrico/Color-picker-library/images/download.svg) ](https://bintray.com/enricod/Enrico/Color-picker-library/_latestVersion)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Color%20picker%20library-orange.svg?style=flat)](https://android-arsenal.com/details/1/4949)
 
 ![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/screens.png)
 ------
 
-### Sample Project
+# Sample Project
 
 You can download the latest sample APK from this repo here: https://github.com/enricocid/Color-picker-library/blob/master/app/app-release.apk
 
