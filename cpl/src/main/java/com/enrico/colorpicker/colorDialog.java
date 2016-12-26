@@ -99,7 +99,7 @@ public class colorDialog extends DialogFragment {
     public static void setPickerColor(Context context, int dialogNumber, int color) {
 
         SharedPreferences preferenceColor;
-        preferenceColor = context.getSharedPreferences(String.valueOf(dialogNumber), Color.BLACK);
+        preferenceColor = context.getSharedPreferences(String.valueOf(dialogNumber), Context.MODE_PRIVATE);
 
 
         preferenceColor.edit()
@@ -115,7 +115,7 @@ public class colorDialog extends DialogFragment {
     public static int getPickerColor(final Context context, final int dialogNumber) {
 
         Resources resources = context.getResources();
-        SharedPreferences preferenceColor = context.getSharedPreferences(String.valueOf(dialogNumber), colorUtils.randomColor(resources));
+        SharedPreferences preferenceColor = context.getSharedPreferences(String.valueOf(dialogNumber), Context.MODE_PRIVATE);
         String colorValue = preferenceColor.getString("selectedColor", String.valueOf(colorUtils.randomColor(resources)));
 
         final int color = Integer.parseInt(colorValue);
