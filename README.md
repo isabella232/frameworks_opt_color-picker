@@ -229,6 +229,8 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 
 ###(Optional) Set a circle preference and colored summary
   
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/pref.png)
+
 We are going to access the preference in a static method. In Your Preference fragment let's define the preference:
 
 ```java
