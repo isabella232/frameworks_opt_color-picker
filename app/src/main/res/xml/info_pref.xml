@@ -5,6 +5,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/preference_screen">
 
+    <!-- Theme -->
+    <ListPreference
+        android:defaultValue="8"
+        android:entries="@array/theme_options"
+        android:entryValues="@array/pref_theme_list_values"
+        android:key="@string/pref_theme"
+        android:summary="@string/themesum"
+        android:title="@string/pref_theme_title" />
+
     <!-- preferences -->
     <Preference
         android:key="preferenceColor"

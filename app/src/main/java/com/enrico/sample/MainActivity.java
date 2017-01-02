@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,13 +15,23 @@ public class MainActivity extends AppCompatActivity implements colorDialog.Color
 
     int color, color2;
 
+    //All the views :D
     View oneView, twoView, thirdView;
 
     TextView textView1, textView2;
 
+    //ContextThemeWrapper
+    ContextThemeWrapper themeWrapper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //apply activity's theme if dark theme is enabled
+        themeWrapper = new ContextThemeWrapper(getBaseContext(), this.getTheme());
+
+        Preferences.applyTheme(themeWrapper, getBaseContext());
+
         setContentView(R.layout.activity_main);
 
         color = colorDialog.getPickerColor(MainActivity.this, 1);

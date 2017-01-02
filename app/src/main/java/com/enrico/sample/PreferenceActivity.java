@@ -1,11 +1,15 @@
 package com.enrico.sample;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -17,9 +21,17 @@ import static com.enrico.sample.PreferenceActivity.SettingsFragment.secondPrefer
 @SuppressLint("NewApi")
 public class PreferenceActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {
 
+    //ContextThemeWrapper
+    ContextThemeWrapper themeWrapper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //apply activity's theme if dark theme is enabled
+        themeWrapper = new ContextThemeWrapper(getBaseContext(), this.getTheme());
+
+        Preferences.applyTheme(themeWrapper, getBaseContext());
 
         setContentView(R.layout.preference_activity);
 
@@ -84,6 +96,8 @@ public class PreferenceActivity extends AppCompatActivity implements colorDialog
         static Preference firstPreference;
         static Preference secondPreference;
 
+        private SharedPreferences.OnSharedPreferenceChangeListener mListenerOptions;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -124,6 +138,44 @@ public class PreferenceActivity extends AppCompatActivity implements colorDialog
                     return false;
                 }
             });
+
+            //initialize shared preference change listener
+            //some preferences when enabled requires an app reboot
+            mListenerOptions = new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences preftheme, String key) {
+
+                    //on theme selection restart the app
+                    if (key.equals(getResources().getString(R.string.pref_theme))) {
+                        restartApp();
+                    }
+                }
+            };
+        }
+
+        //register preferences changes
+        @Override
+        public void onResume() {
+            super.onResume();
+
+            //register preferences changes
+            getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(mListenerOptions);
+        }
+
+        //unregister preferences changes
+        @Override
+        public void onPause() {
+            getPreferenceManager().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(mListenerOptions);
+            super.onPause();
+        }
+
+        //method to restart the app and apply the changes
+        private void restartApp() {
+            Intent newIntent = new Intent(getActivity(), MainActivity.class);
+            newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(newIntent);
+            getActivity().overridePendingTransition(0, 0);
+            getActivity().finish();
         }
     }
 }

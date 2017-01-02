@@ -7,21 +7,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextWatcher;
-import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -131,16 +128,18 @@ public class colorDialog extends DialogFragment {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
+
+                int viewColor = colorUtils.getColorViewColor(activity.getWindow().getDecorView().getRootView());
+
                 String plainSummary = Integer.toHexString(color).toUpperCase();
-                Spannable coloredSummary = new SpannableString(plainSummary);
-                coloredSummary.setSpan(new ForegroundColorSpan(color), 0, coloredSummary.length(), 0);
-                preference.setSummary(coloredSummary);
-                Bitmap.Config conf = Bitmap.Config.ARGB_8888;
-                Bitmap bmp = Bitmap.createBitmap(paletteUtils.SpToPixels(activity, 40), paletteUtils.SpToPixels(activity, 40), conf);
-                bmp.eraseColor(color);
-                final RoundedBitmapDrawable RBD = RoundedBitmapDrawableFactory.create(resources, bmp);
-                RBD.setCircular(true);
-                preference.setIcon(RBD);
+                final Spannable boldSummary = new SpannableString(plainSummary);
+
+                boldSummary.setSpan(new StyleSpan(android.graphics.Typeface.BOLD),
+                        0, boldSummary.length(), 0);
+
+                preference.setSummary(boldSummary);
+
+                paletteUtils.createCircularPreferenceBitmap(preference, activity, resources, color, viewColor);
 
             }
         });

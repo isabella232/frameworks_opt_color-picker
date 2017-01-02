@@ -10,7 +10,7 @@
 [ ![cpl](https://api.bintray.com/packages/enricod/Enrico/Color-picker-library/images/download.svg) ](https://bintray.com/enricod/Enrico/Color-picker-library/_latestVersion)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Color%20picker%20library-orange.svg?style=flat)](https://android-arsenal.com/details/1/4949)
 
-![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/screens.png)
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/screens2.png)
 ------
 
 # Sample Project
@@ -234,9 +234,9 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 }
 ```
 
-###(Optional) Set a circle preference and colored summary
+###(Optional) Set a custom preference
   
-![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/pref.png)
+![ScreenShot](https://github.com/enricocid/Color-picker-library/blob/master/art/pref2.png)
 
 We are going to access the preference in a static method. In Your Preference fragment let's define the preference:
 
@@ -260,7 +260,7 @@ public static class YourPreferenceFragment extends PreferenceFragment {
 }
 ```
 
-###onColorSelection method we are going to set custom Preference summary (circle + colored summary):
+###onColorSelection method we are going to set custom Preference:
 
 ```java
 public class PreferenceActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {

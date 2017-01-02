@@ -26,12 +26,45 @@ class seekbarUtils {
         }
     }
 
+    //color seekbars
+    private static void initializeAlphaSeekBarColor(Activity activity, View colorView, final SeekBar alphatize) {
+
+        int color = colorUtils.getColorViewColor(colorView);
+
+        double darkness = 1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255;
+
+        if (darkness < 0.5) {
+
+            activity.runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    alphatize.getProgressDrawable().setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_IN);
+                    alphatize.getThumb().setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_IN);
+                }
+            });
+
+        } else {
+
+            activity.runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    alphatize.getProgressDrawable().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
+                    alphatize.getThumb().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
+                }
+            });
+        }
+    }
+
     //initialize seekbars
     static void initializeSeekBars(final Activity activity, final TextWatcher aaTextWatcher, final TextWatcher hexTextWatcher, final TextWatcher aTextWatcher, final TextWatcher rTextWatcher, final TextWatcher gTextWatcher, final TextWatcher bTextWatcher, final int alpha, final SeekBar alphatize, final SeekBar first, final SeekBar second, final SeekBar third, final View colorView, final TextView hashtext, final TextView hashtag, final TextView rgb, final EditText editHEX, final EditText editAA, final EditText editAlpha, final EditText editR, final EditText editG, final EditText editB) {
 
         viewUtils.updateAlphaEdits(activity, alphatize, editAA, editAlpha, alpha);
 
-        initializeSeekBarsColors(alphatize, first, second, third);
+        initializeSeekBarsColors(first, second, third);
+
+        initializeAlphaSeekBarColor(activity, colorView, alphatize);
 
         alphatize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
