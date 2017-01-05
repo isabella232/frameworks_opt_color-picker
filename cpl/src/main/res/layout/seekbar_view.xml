@@ -34,8 +34,7 @@
             android:layout_centerInParent="true"
             android:layout_toEndOf="@+id/aaa"
             android:layout_toRightOf="@+id/aaa"
-            android:max="255"
-            android:tag="@color/seekGrey" />
+            android:max="255" />
     </RelativeLayout>
 
     <RelativeLayout
